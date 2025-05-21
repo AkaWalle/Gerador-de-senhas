@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  color: #f1f5f9; /* Texto principal: branco suave */
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #1a1a2e 50%, #16213e 50%); /* Gradiente: azul escuro para roxo escuro */
+}
+
+.container {
+  width: 430px;
+  background: #0f172a; /* Fundo do container: azul muito escuro */
+  border-radius: 7px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.container h2 {
+  font-weight: 600;
+  font-size: 21px;
+  padding: 16px 30px;
+  border-bottom: 1px solid #4b5563; /* Borda: cinza escuro */
+  text-align: center;
+}
+
+.wrapper {
+  margin: 20px 30px;
+}
+
+.input-box {
+  position: relative;
+}
+
+.input-box input {
+  width: 100%;
+  height: 53px;
+  color: #f1f5f9; /* Texto: branco suave */
+  background: none;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 4px;
+  letter-spacing: 1.4px;
+  border: 1px solid #4b5563; /* Borda: cinza escuro */
+  padding: 0 48px 0 16px;
+}
+
+.input-box span {
+  position: absolute;
+  right: 13px;
+  cursor: pointer;
+  line-height: 53px;
+  color: #9ca3af; /* Ícone de copiar: cinza claro */
+  transition: color 0.3s ease;
+}
+
+.input-box span:hover,
+.input-box span:focus {
+  color: #22d3ee !important; /* Ícone ativo: ciano claro */
+}
+
+.input-box span:focus {
+  outline: 2px solid #22d3ee; /* Foco: ciano claro */
+  border-radius: 4px;
+}
+
+.pass-indicator {
+  width: 100%;
+  height: 4px;
+  position: relative;
+  background: #4b5563; /* Fundo do indicador: cinza escuro */
+  margin-top: 12px;
+  border-radius: 25px;
+}
+
+.pass-indicator::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  transition: width 0.3s ease;
+}
+
+.pass-indicator#weak::before {
+  width: 20%;
+  background: #f87171; /* Fraco: vermelho suave */
+}
+
+.pass-indicator#medium::before {
+  width: 50%;
+  background: #facc15; /* Médio: amarelo suave */
+}
+
+.pass-indicator#strong::before {
+  width: 100%;
+  background: #4ade80; /* Forte: verde suave */
+}
+
+.pass-length {
+  margin: 25px 0 20px;
+}
+
+.pass-length .details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pass-length input[type="range"] {
+  width: 100%;
+  height: 5px;
+  appearance: none;
+  background: #4b5563; /* Fundo do slider: cinza escuro */
+  border-radius: 25px;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+.pass-length input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #22d3ee; /* Thumb do slider: ciano claro */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.pass-length input[type="range"]::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: #22d3ee; /* Thumb do slider: ciano claro */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.pass-length input[type="range"]:focus {
+  background: #6b7280; /* Fundo do slider ao focar: cinza mais claro */
+}
+
+.pass-settings .options {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.pass-settings .options .option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 50%;
+}
+
+.options .option:first-child {
+  pointer-events: none;
+}
+
+.options .option:first-child input {
+  opacity: 0.7;
+}
+
+.options .option input {
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
+}
+
+.options .option input:focus {
+  outline: 2px solid #22d3ee; /* Foco: ciano claro */
+}
+
+.options .option label {
+  cursor: pointer;
+  color: #9ca3af; /* Texto das opções: cinza claro */
+  padding-left: 16px;
+}
+
+.generate-btn {
+  width: 100%;
+  color: #f1f5f9; /* Texto: branco suave */
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: #1e40af; /* Fundo do botão: azul escuro */
+  font-size: 17px;
+  padding: 15px 0;
+  border-radius: 5px;
+  text-transform: uppercase;
+  margin: 15px 0 20px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.generate-btn:hover {
+  background: #2563eb; /* Hover: azul mais claro */
+}
+
+.generate-btn:active {
+  transform: scale(0.95);
+}
+
+.generate-btn:focus {
+  outline: 2px solid #22d3ee; /* Foco: ciano claro */
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+}
